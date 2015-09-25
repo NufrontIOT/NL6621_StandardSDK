@@ -1,0 +1,34 @@
+;;  Copyright ARM Ltd 2005-2008. All rights reserved.
+;;  Scatter file for Cortex-M3
+
+LOAD_REGION 0x00000000  0x00030000  {    ; load region size_region
+    ;;  ROM-64K-10000, CODE-192K-30000 
+    ROM  0x00000000 0x00030000  {  ; load address = execution address
+        *.o (RESET, +First)
+        *(InRoot$$Sections)
+        .ANY (+RO)
+    }
+        
+    ;;  DATA-96K-18000
+    ;;  0x00080000-0x000807FF     FW ROM hook function table
+    DATA_SRAM  0x00080800    0x00017800  {
+         cortexm3_startup.o(STACK)
+         main.o(main_only_cpu_access_mem)
+         mac_mng_main.o(mac_only_cpu_access_mem)
+         mac_mng_main.o(cell_mem_pool)
+         .ANY (+RW +ZI)
+    }
+
+    ;;  BUF-160K-28000
+    PING_BUF_SRAM0 0x20000000  0x18000  ; BUF_SRAM0
+    {
+        mac_mng_main.o(ping_mem_pool)
+        .ANY (+RW +ZI)
+    }
+
+    PONG_BUF_SRAM1 0x20040000  0x10000  ; BUF_SRAM1
+    {
+        mac_mng_main.o(pong_mem_pool)
+        .ANY (+RW +ZI)
+    }
+}
