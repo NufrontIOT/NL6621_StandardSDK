@@ -112,7 +112,7 @@
 //#define TEST_SNIFFER
 //#define TEST_UART_UPDATE_FW
 //#define TEST_OTA_UPDATE_FW
-#define TEST_AIRKISS
+//#define TEST_AIRKISS
 
 #define TEST_TCP_SERVER
 //以下选项每次测试时只可打开其中之一
