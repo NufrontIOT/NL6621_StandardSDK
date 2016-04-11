@@ -33,7 +33,7 @@ const INT8U FwCreatedTime[] = __TIME__;
 const INT8U FwType[] = "SDK";
 const INT8U FwVerNum[3] = {
 	0x01,  /* Main version */ 
-	0x12, /* Sub version */
+	0x13, /* Sub version */
 	0x00  /* Internal version */
 };
 

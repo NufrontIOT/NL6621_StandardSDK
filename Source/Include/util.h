@@ -196,7 +196,7 @@ VOID NST_RELEASE_LOCK(
 VOID DBGPRINT_MGMT(UINT8 level, UINT8 *fmt, ...);
 void hex_dump(char *str, unsigned char *pSrcBufVA, unsigned int SrcBufLen);
 
-#define DEBUG_ON         1   // Global debug on-off
+#define DEBUG_ON         0   // Global debug on-off
 #define DEBUG_LEVEL      DEBUG_TRACE  // control output level, lower values indicate higher urgency
 #define DEBUG_OFF	     0
 #define DEBUG_ERROR     1

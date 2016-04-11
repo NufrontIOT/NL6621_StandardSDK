@@ -84,10 +84,18 @@ typedef enum
 
 typedef enum
 {
-    PARAM_TX_PWR_LEVEL_LOW = 0,
-    PARAM_TX_PWR_LEVEL_NORM,
-    PARAM_TX_PWR_LEVEL_HIGH
+    PARAM_TX_PWR_LEVEL_1 = 0,
+    PARAM_TX_PWR_LEVEL_2,
+    PARAM_TX_PWR_LEVEL_3,
+    PARAM_TX_PWR_LEVEL_4,
+    PARAM_TX_PWR_LEVEL_5,
+    PARAM_TX_PWR_LEVEL_6,
+    PARAM_TX_PWR_LEVEL_7,
+    PARAM_TX_PWR_LEVEL_8,
+    PARAM_TX_PWR_LEVEL_9,
+    PARAM_TX_PWR_LEVEL_10
 } PARAM_TX_PWR_LEVEL;
+
 
 typedef	struct _WIFI_CFG{
 	INT8U Ssid[33];			// ssid to create or join, end with '\0'
